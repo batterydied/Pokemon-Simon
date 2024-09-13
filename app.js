@@ -48,7 +48,7 @@ function game(){
             pattern.push(color);
             const button = `#${color}`;
                 $(button).addClass("pressed");  
-                const audio = new Audio(`./sounds/${color}.mp3`);
+                const audio = new Audio(`./assets/sounds/${color}.mp3`);
                 audio.play(); 
                 setTimeout(function(){
                     audio.play();
@@ -79,7 +79,7 @@ function game(){
                 currentButton.removeClass("pressed"); 
                     
              }else{
-                const audio = new Audio(`./sounds/${currentColor}.mp3`); 
+                const audio = new Audio(`./assets/sounds/${currentColor}.mp3`); 
                     audio.play();
                     setTimeout(function(){
                         currentButton.removeClass("pressed"); 
@@ -110,7 +110,7 @@ function game(){
     }
     
     function gameOver(){
-        const audio = new Audio("./sounds/wrong.mp3");
+        const audio = new Audio("./assets/sounds/wrong.mp3");
         audio.play();
 
         let currentScore = currentLevel - 1;
@@ -120,7 +120,7 @@ function game(){
             setHighScore(currentScore);
             scoreText = `<p>Current Score: ${currentScore}, New High Score!</p>`
             setTimeout(()=>{
-                const audio = new Audio("./sounds/level-up.mp3");
+                const audio = new Audio("./assets/sounds/level-up.mp3");
                 audio.play();
             }, 300);
         }

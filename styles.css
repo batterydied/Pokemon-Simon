@@ -6,11 +6,14 @@ body {
   margin: 0;
   padding: 0;
 }
-
+@font-face{
+  font-family: "genOne";
+  src: url("./assets/fonts/genOne.ttf");
+}
 #level-title {
   text-align: center;
-  font-family: 'Work Sans', cursive;
-  font-size: 3rem;
+  font-family: "genOne", sans-serif;
+  font-size: 2.5rem;
   color: black;
   margin: 0;
 }
@@ -47,26 +50,26 @@ body {
 
 .red {
   background-color: red;
-  background-image: url("./assets/charmander.png");
-  background-size: 115%;
+  background-image: url("./assets/images/charmander.png");
+  background-size: 100%;
 }
 
 .green {
   background-color: green;
-  background-image: url("./assets/bulbasaur.png");
-  background-size: 115%;
+  background-image: url("./assets/images/bulbasaur.png");
+  background-size: 100%;
 }
 
 .blue {
   background-color: blue;
-  background-image: url("./assets/squirtle.png");
-  background-size: 115%;
+  background-image: url("./assets/images/squirtle.png");
+  background-size: 100%;
 }
 
 .yellow {
   background-color: yellow;
-  background-image: url("./assets/pikachu.png");
-  background-size: 115%;
+  background-image: url("./assets/images/pikachu.png");
+  background-size: 100%;
 }
 
 .pressed {
@@ -74,7 +77,7 @@ body {
 }
 
 #level-title p{
-  font-size: 2rem; 
+  font-size: 1.5rem; 
   padding: 0;
   margin: 0;
 }
