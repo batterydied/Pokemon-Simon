@@ -9,6 +9,16 @@ function game(){
 
     highScoreDisplay();
     
+    function initialized(event){
+        if(start === 0){
+            start = 1;
+            clearTimeout(animationTimeout);
+            animationRunning = false;
+            beginGame();
+            }else{
+                keyHandler(event);
+            }
+    }
     function animateText() {
         if(animationRunning){
             $('#level-title').css({transform:'scale(1.02)', transition:'transform 0.5s'});
@@ -19,19 +29,11 @@ function game(){
     }
 
     let animationTimeout = animateText();
-
-    $(document).on("keydown", (event)=>{
-        if(start === 0){
-            start = 1;
-            clearTimeout(animationTimeout);
-            animationRunning = false;
-            beginGame();
-        }else{
-            keyHandler(event);
-        }
-    });
+    $(document).on("click", initialized);
+    $(document).on("keydown", initialized);
 
     function beginGame(){
+        $(document).off("click", initialized);
         currentScore = 0;
         patternIndex = 0;
         $("#level-title").html(`Level ${currentLevel}`);
@@ -76,8 +78,8 @@ function game(){
             if(pattern[patternIndex] != currentColor){
                 $(".btn").off("click", clickHandler);
                 gameOver();
-                currentButton.removeClass("pressed"); 
-                    
+                currentButton.removeClass("pressed");
+                setTimeout(()=>{$(document).on("click", initialized);}, 1);
              }else{
                 const audio = new Audio(`./assets/sounds/${currentColor}.mp3`); 
                     audio.play();
