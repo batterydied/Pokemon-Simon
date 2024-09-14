@@ -13,33 +13,36 @@ body {
 #level-title {
   text-align: center;
   font-family: "genOne", sans-serif;
-  font-size: 2.5rem;
+  font-size: 3vw;
   color: black;
   margin: 0;
 }
 
 .container {
-  display: block;
+  display: flex;
   width: 50%;
+  height: 75%;
   margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 .title-container{
   display: flex;
   height: 25%;
-  width: auto;
+  width: 100%;
   background-color: #EE1515;
   margin: 0;
   padding: 0;
-  border-bottom: 15px solid #222224;
+  border-bottom: 2vw solid #222224;
   justify-content: center;
   align-items: center;
 }
 .btn {
-  margin: 25px;
+  margin: 1vw;;
   display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
+  height: 15vw;
+  width: 15vw;
+  border: .3vw solid black;
   border-radius: 20%;
 }
 
@@ -77,7 +80,7 @@ body {
 }
 
 #level-title p{
-  font-size: 1.5rem; 
+  font-size: 2.5vw; 
   padding: 0;
   margin: 0;
 }
@@ -87,26 +90,41 @@ body {
   color: white;
 }
 
-@media(max-width: 1104px) {
-  .container {
-    width: 60%;
-  }
-}
-
-@media(max-width: 922px) {
-  .container {
-    width: 70%;
-  }
-}
-
-@media(max-width: 793px) {
-  .container {
+@media (max-width: 1200px){
+  .container{
     width: 80%;
   }
-}
-
-@media(max-width: 695px) {
-  .container {
-    width: 90%;
+  .btn {
+    border: .4vw solid black;
+    height: 18vw;
+    width: 18vw;
   }
 }
+
+@media (max-width: 992px){
+  .btn {
+    border: .5vw solid black;
+    height: 24vw;
+    width: 24vw;
+  }
+}
+
+@media (max-width: 768px){
+  .btn {
+    border: .6vw solid black;
+    height: 30vw;
+    width: 30vw;
+  }
+}
+
+@media (max-width: 576px){
+  .btn {
+    border: .7vw solid black;
+    height: 35vw;
+    width: 35vw;
+  }
+}
+
+
+
+
