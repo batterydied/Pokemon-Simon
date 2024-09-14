@@ -85,7 +85,6 @@ body {
 .game-over-styles{
   font-weight: bold;
   color: white;
-  text-shadow: 1px 1px 20px black;
 }
 
 @media(max-width: 1104px) {
