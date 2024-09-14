@@ -112,32 +112,39 @@ function game(){
     }
     
     function gameOver(){
-        const audio = new Audio("./assets/sounds/wrong.mp3");
+        playAudio('./assets/sounds/wrong.mp3');
+        scoreDisplay();
+        resetGame();
+        $('body').addClass('game-over');
+        setTimeout(()=>{
+            $('body').removeClass('game-over');
+        }, 20);
+    }
+    function playAudio(filepath){
+        const audio = new Audio(filepath);
         audio.play();
-
-        let currentScore = currentLevel - 1;
+    }
+    function getScore(){
+        return currentLevel - 1;
+    }
+    function scoreDisplay(){
+        let currentScore = getScore();
         let scoreText = `<p>Current Score: ${currentScore}</p>`;
 
         if(currentScore > highScore){
             setHighScore(currentScore);
             scoreText = `<p>Current Score: ${currentScore}, New High Score!</p>`
             setTimeout(()=>{
-                const audio = new Audio("./assets/sounds/level-up.mp3");
-                audio.play();
+                playAudio('./assets/sounds/level-up.mp3');
             }, 300);
         }
-
-        $("#level-title").html(`<span class="game-over-styles">GAME OVER</span><p>Press A Key to Start Again</p>${scoreText}`);
-
+        $('#level-title').html(`<span class="game-over-styles">GAME OVER</span><p>Press A Key to Start Again</p>${scoreText}`);
+    }
+    function resetGame(){
         pattern = [];
         currentLevel = 1;
         start = 0;
-        $("body").addClass("game-over");
-        setTimeout(()=>{
-            $("body").removeClass("game-over");
-        }, 20);
     }
-
 }
 
 game();
